@@ -1,0 +1,44 @@
+﻿<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+    </div>
+    <div class="navbar-collapse collapse">            
+        @if (Request.IsAuthenticated)
+        {
+                                                                                                                                        <ul class="nav navbar-nav">
+    <li class="active"><a href="/home">Home</a></li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos
+        <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Buttons</a></li>
+            <li><a href="#">Menus</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </li>
+    <li><a href="/home/about">About</a></li>
+    <li><a href="/home/contact">Contact</a></li>
+</ul>
+        }
+        <ul class="nav navbar-nav navbar-right">
+            @if (Request.IsAuthenticated)
+            {
+                <li><a href="/account/LogOff">Logout</a></li>
+            }
+            else
+            {
+                <li><a href="/account/login">Login</a></li>
+                <li><a href="#">Help</a></li>
+            }    
+        </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+</div>
